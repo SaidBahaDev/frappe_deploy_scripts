@@ -24,6 +24,11 @@ cd frappe_docker
 
 Create and configure **`.env`** and **`apps.json`** inside this directory.
 
+cp example.env .env
+
+nano .env
+
+
 ---
 
 ## **3️⃣ Required Environment Variables**
