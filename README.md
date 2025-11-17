@@ -144,7 +144,29 @@ To understand what these **override files** do and check if you need different o
   ```bash
   docker compose --project-name frappe-yourapp -f ~/gitops/docker-compose.yaml up -d
   ```
+if issue on proxmox :
 
+Stop the container:
+
+pct stop 110
+
+
+Edit the container config:
+
+nano /etc/pve/lxc/110.conf
+
+
+Add these lines at the end:
+
+lxc.apparmor.profile: unconfined
+lxc.cgroup2.devices.allow: a
+
+
+Save and exit.
+
+Start the container:
+
+pct start 110
 ---
 
 ## **🔟 (First-Time Setup) Create Site & Install Apps**
